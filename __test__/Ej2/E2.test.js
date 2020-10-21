@@ -21,12 +21,13 @@ function saludo (nombre){
 
 
 test("Si no es string", ()=>{
-    expect(()=>saludo(9)).toThrow("Ingrese un nombre valido")
+    var llamadaAlaFuncion = ()=>saludo(9);
+    var errorEsperado = "Ingrese un nombre valido";
+    expect(llamadaAlaFuncion).toThrow(errorEsperado);
 })
 test("Si  es string vacia", ()=>{
-    expect(()=>saludo("")).toThrow("Ingrese un nombre valido")
-})
 
-test("Si  es string ", ()=>{
-    expect(saludo("Juan")).toBe("Hola Juan Bienvenido!")
+    var llamadaAlaFuncion = ()=>saludo("");
+    var errorEsperado = "Ingrese un nombre valido";
+    expect(llamadaAlaFuncion).toThrow(errorEsperado);
 })
